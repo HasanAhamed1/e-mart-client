@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useProfile from "../../../../Hooks/useProfile";
+import Loading from "../../../Shared/Loading/Loading";
 
 const AddReview = () => {
   const [profile, profileLoading] = useProfile();
@@ -27,7 +28,7 @@ const AddReview = () => {
   });
 
   if (isLoading) {
-    return <span>Loading... orderdetail</span>;
+    return <Loading></Loading>;
   }
 
   if (isError) {

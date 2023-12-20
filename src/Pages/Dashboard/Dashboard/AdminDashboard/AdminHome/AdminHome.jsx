@@ -21,6 +21,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import Loading from "../../../../Shared/Loading/Loading";
 
 const AdminHome = () => {
   const { axiosSecure } = useAxiosSecure();
@@ -243,7 +244,7 @@ const AdminHome = () => {
                   <Legend />
                 </PieChart>
               ) : (
-                <p>Loading...</p>
+                <Loading></Loading>
               )}
             </div>
           </div>

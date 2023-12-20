@@ -1,6 +1,7 @@
 import React from "react";
 import aboutImage from "../../../assets/aboutUs.jpg";
 import promisesImage from "../../../assets/promises.avif";
+import AutoBackToTop from "../../../Component/AutoBackToTop";
 
 const AboutUs = () => {
   return (
@@ -230,6 +231,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
+      <AutoBackToTop />
     </>
   );
 };

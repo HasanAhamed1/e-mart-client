@@ -12,6 +12,7 @@ import { cartDataContext } from "../../../Contexts/CartDataProvider";
 import toast from "react-hot-toast";
 import UserTitle from "../../../Component/UserTitle";
 import { TbCurrencyTaka } from "react-icons/tb";
+import Loading from "../../Shared/Loading/Loading";
 
 const MyCart = () => {
   const { setSelectedOrderItems } = useContext(cartDataContext);
@@ -170,7 +171,7 @@ const MyCart = () => {
     <>
       <>
         {loading ? (
-          <p>loading....</p>
+          <Loading></Loading>
         ) : (
           <div className="w-full h-full p-5 md:p-10 user-select-none">
             <div className="">

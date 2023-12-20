@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import AdminTitle from "../../../Component/AdminTitle";
 import UserTitle from "../../../Component/UserTitle";
+import Loading from "../../Shared/Loading/Loading";
 // import {PiHandCoins} from "react-icons/pi"
 const CheckOut = () => {
   // states
@@ -129,7 +130,7 @@ const CheckOut = () => {
   };
 
   if (loading) {
-    return <>Loading...</>;
+    return <Loading></Loading>;
   }
 
   const handlePlaceOrder = () => {

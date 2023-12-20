@@ -16,6 +16,10 @@ const ShowDeliveredOrder = () => {
   const [searchSize, setSearchSize] = useState(15);
   const [currentPage, setCurrentPage] = useState(0);
 
+  // Assuming profile is an object with an _id property
+const profileId = profile?._id;
+//console.log(profileId)
+
   const {
     refetch,
     data: orderedProducts = {},
@@ -31,8 +35,6 @@ const ShowDeliveredOrder = () => {
     },
   });
 
-  const deliveredProducts = orderedProducts.filter(order => order?.status === 'delivered' && profile?.email === email);
-
   //const pages = Math.ceil
   const handleInputChange = (e) => {
     setCurrentPage(0)
@@ -47,14 +49,14 @@ const ShowDeliveredOrder = () => {
       <div>
         <div className="flex  justify-between items-center">
           <p className="text-xl font-bold text-accent mt-5">Delivered Orders</p>
-          <button  onClick={refetch} 
+          {/* <button  onClick={refetch} 
           type="button"
-           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 ">Reload</button>
+           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 ">Reload</button> */}
         </div>
         <div className="divider"></div>
       </div>
 
-      <div className="relative mt-5 flex justify-between items-center mb-3">
+      {/* <div className="relative mt-5 flex justify-between items-center mb-3">
         <div>
           <select
             value={searchSize}
@@ -99,7 +101,7 @@ const ShowDeliveredOrder = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
       {
         isLoading ? <>Loading</> : <>
 
@@ -124,14 +126,10 @@ const ShowDeliveredOrder = () => {
               </tr>
             </thead>
             <tbody>
-              {deliveredProducts &&
-                Array.isArray(deliveredProducts?.orders) &&
-                deliveredProducts?.orders.map((i, count) => (
+              {orderedProducts &&
+                Array.isArray(orderedProducts?.orders) &&
+                orderedProducts?.orders.map((i, count) => (
                   <tr key={i?._id} className="bg-white border-b  hover:bg-gray-50 ">
-                    {/* <td className="px-6 py-4">
-                                      <img className="w-10 h-10 rounded-full" src={i?.image} alt={i?.name} />
-
-                                  </td> */}
                     <td className={`px-6 py-4 ${i?.status === "Cancelled" && "text-red-500 font-medium"}`}>#{i?._id.slice(-6)}</td>
                     <td className={`px-6 py-4 ${i?.status === "Cancelled" && "text-red-500 font-medium"}`}>
                     {i?.status === "Cancelled" ? "Cancelled" :
@@ -168,7 +166,7 @@ const ShowDeliveredOrder = () => {
         </>
       }
 
-      <nav
+      {/* <nav
         className="w-full flex justify-center mt-5 select-none pb-5"
         aria-label="Page navigation example"
       >
@@ -194,7 +192,7 @@ const ShowDeliveredOrder = () => {
             </li>
           ))}
         </ul>
-      </nav>
+      </nav> */}
     </section>
   );
 };

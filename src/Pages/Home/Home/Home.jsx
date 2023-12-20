@@ -12,6 +12,7 @@ import BackToTopButton from '../../../Component/BackToTopButton';
 import { Toaster } from 'react-hot-toast';
 import useRole from '../../../Hooks/useRole';
 import HomeBottomBanner from '../HomeBottomBanner/HomeBottomBanner';
+import AutoBackToTop from '../../../Component/AutoBackToTop';
 
 
 const Home = () => {
@@ -32,6 +33,7 @@ const Home = () => {
                 <HomeBottomBanner />
                 </div>
                 <ShowAllProducts></ShowAllProducts>
+                <AutoBackToTop />
                 <BackToTopButton />
             </div>
         </>

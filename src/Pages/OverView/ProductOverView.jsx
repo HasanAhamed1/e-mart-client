@@ -4,9 +4,9 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { TbCurrencyTaka } from "react-icons/tb";
 import { useLoaderData, useParams } from "react-router-dom";
 import useCart from "../../Hooks/useCart";
-import BackToTopButton from "../../Component/BackToTopButton";
 import ReactStars from "react-rating-stars-component";
 import useRole from "../../Hooks/useRole";
+import AutoBackToTop from "../../Component/AutoBackToTop";
 
 const ProductOverView = () => {
   const {role} = useRole();
@@ -166,7 +166,7 @@ const ProductOverView = () => {
         }
       </div>)
       }
-      <BackToTopButton />
+      <AutoBackToTop />
     </>
   );
 };

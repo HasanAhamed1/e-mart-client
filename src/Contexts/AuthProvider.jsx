@@ -101,7 +101,8 @@ const AuthProvider = ({children}) => {
     }
 
     if(loading){
-      return <><p className='text-red-600 text-4xl'><span className="loading loading-infinity loading-lg"></span>Loading...</p></>
+      return <Loading></Loading>
+      // return <><p className='text-red-600 text-4xl'><span className="loading loading-infinity loading-lg"></span>Loading...</p></>
     }
     return (
         <AuthContext.Provider value={authInfo}>
