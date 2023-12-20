@@ -44,9 +44,12 @@ const PagesForSubCategory = () => {
       <TrendingProducts products={products} />
       </div>)
      }
-
+     {
+      subCategory?.bottomBannerImage && (<div className="bg-white">
+        <ThirdBanner images={subCategory.bottomBannerImage} />
+      </div>)
+    }
       
-      <ThirdBanner images={subCategory.bottomBannerImage} /> 
       {
         products.length > 0 && (<SubCategoryAllProducts products={products} />)
       }
