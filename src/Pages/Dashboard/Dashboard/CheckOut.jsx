@@ -36,7 +36,7 @@ const CheckOut = () => {
   useEffect(() => {
     axios
       .get(
-        `${import.meta.env.VITE_SERVERADDRESS}/checkout?email=${user?.email}`,
+        `${import.meta.env.VITE_SERVER_ADDRESS}/checkout?email=${user?.email}`,
         {
           withCredentials: true,
         }
@@ -70,7 +70,7 @@ const CheckOut = () => {
 
     axios
       .post(
-        `${import.meta.env.VITE_SERVERADDRESS}/get-discount-by-coupon?email=${
+        `${import.meta.env.VITE_SERVER_ADDRESS}/get-discount-by-coupon?email=${
           user?.email
         }`,
         data,
@@ -100,7 +100,7 @@ const CheckOut = () => {
     const data = { finalAmount: totalProductPrice + deliveryCharge };
     axios
       .post(
-        `${import.meta.env.VITE_SERVERADDRESS}/get-discount-by-coin?email=${
+        `${import.meta.env.VITE_SERVER_ADDRESS}/get-discount-by-coin?email=${
           user?.email
         }`,
         data,
@@ -136,7 +136,7 @@ const CheckOut = () => {
     const data = { couponName: discount?.couponCode };
     axios
       .post(
-        `${import.meta.env.VITE_SERVERADDRESS}/checkout?email=${user?.email}`,
+        `${import.meta.env.VITE_SERVER_ADDRESS}/checkout?email=${user?.email}`,
         data,
         {
           withCredentials: true,

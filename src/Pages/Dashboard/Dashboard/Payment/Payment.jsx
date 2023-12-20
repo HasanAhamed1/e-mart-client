@@ -18,7 +18,7 @@ const Payment = () => {
     queryKey: ['orderData', _OrderID],
     queryFn: async () => {
 
-      const res = await axios.get(`${import.meta.env.VITE_SERVERADDRESS}/payment-methods?email=${user?.email}&_orderID=${_OrderID}`, { withCredentials: true })
+      const res = await axios.get(`${import.meta.env.VITE_SERVER_ADDRESS}/payment-methods?email=${user?.email}&_orderID=${_OrderID}`, { withCredentials: true })
    
       return res?.data;
     },

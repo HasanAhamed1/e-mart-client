@@ -16,7 +16,7 @@ const AddReview = () => {
     enabled: !profileLoading,
     queryFn: async () => {
       const res = await axios.get(
-        `${import.meta.env.VITE_SERVERADDRESS}/order-details?email=${
+        `${import.meta.env.VITE_SERVER_ADDRESS}/order-details?email=${
           profile?.email
         }&_id=${profile?._id}`,
         { withCredentials: true }

@@ -42,7 +42,7 @@ const CheckoutForm = ({ price, products }) => {
     queryKey: ["orderData", _OrderID],
     queryFn: async () => {
       const res = await axios.get(
-        `${import.meta.env.VITE_SERVERADDRESS}/payment-methods?email=${
+        `${import.meta.env.VITE_SERVER_ADDRESS}/payment-methods?email=${
           user?.email
         }&_orderID=${_OrderID}`,
         { withCredentials: true }
@@ -151,7 +151,7 @@ const CheckoutForm = ({ price, products }) => {
 
         axios
           .patch(
-            `${import.meta.env.VITE_SERVERADDRESS}/payment/${_OrderID}?email=${
+            `${import.meta.env.VITE_SERVER_ADDRESS}/payment/${_OrderID}?email=${
               user?.email
             }`,
             updatedData,

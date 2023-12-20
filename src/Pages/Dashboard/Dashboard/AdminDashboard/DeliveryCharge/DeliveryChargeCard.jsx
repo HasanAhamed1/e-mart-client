@@ -34,7 +34,7 @@ const DeliveryChargeCard = ({ disctrict, count }) => {
             "DiscountedDeliveryCharge" : DiscountedDeliveryCharge
         }
         // console.log(data)
-        axios.post(`${import.meta.env.VITE_SERVERADDRESS}/delivery-charge`,data,{
+        axios.post(`${import.meta.env.VITE_SERVER_ADDRESS}/delivery-charge`,data,{
             withCredentials:true,
         }).then(data=>{
             // console.log(data.data);

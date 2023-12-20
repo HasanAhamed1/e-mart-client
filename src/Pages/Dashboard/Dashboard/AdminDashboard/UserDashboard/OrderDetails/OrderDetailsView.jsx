@@ -21,7 +21,7 @@ const OrderDetailsView = () => {
     enabled: !profileLoading,
     queryFn: async () => {
       const res = await axios.get(
-        `${import.meta.env.VITE_SERVERADDRESS
+        `${import.meta.env.VITE_SERVER_ADDRESS
         }/order-detail-view/${orderId}?email=${profile?.email}`,
         { withCredentials: true }
       );
