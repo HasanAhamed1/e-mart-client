@@ -4,10 +4,12 @@ import { useQuery } from "@tanstack/react-query";
 import useRole from "../../../../../../Hooks/useRole";
 import useAxiosSecure from "../../../../../../Hooks/useAxiosSecure";
 import { MdOutlineReviews } from "react-icons/md";
+import useProfile from "../../../../../../Hooks/useProfile";
 
 
 const ShowDeliveredOrder = () => {
   const {role, email} = useRole();
+  const [profile, profileLoading] = useProfile();
   const {type} = useParams();
   const { axiosSecure } = useAxiosSecure();
   const [searchQuery, setSearchQuery] = useState("");
@@ -28,6 +30,8 @@ const ShowDeliveredOrder = () => {
       return res.data;
     },
   });
+
+  const deliveredProducts = orderedProducts.filter(order => order?.status === 'delivered' && profile?.email === email);
 
   //const pages = Math.ceil
   const handleInputChange = (e) => {
@@ -120,9 +124,9 @@ const ShowDeliveredOrder = () => {
               </tr>
             </thead>
             <tbody>
-              {orderedProducts &&
-                Array.isArray(orderedProducts?.orders) &&
-                orderedProducts?.orders.map((i, count) => (
+              {deliveredProducts &&
+                Array.isArray(deliveredProducts?.orders) &&
+                deliveredProducts?.orders.map((i, count) => (
                   <tr key={i?._id} className="bg-white border-b  hover:bg-gray-50 ">
                     {/* <td className="px-6 py-4">
                                       <img className="w-10 h-10 rounded-full" src={i?.image} alt={i?.name} />
