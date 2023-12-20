@@ -11,7 +11,7 @@ const DeliveryCharge = () => {
     data: places = []
   } = useQuery(["places"], async () => {
     try {
-      const res = await axios.get(`https://e-mart-server-one.vercel.app/address`);
+      const res = await axios.get(`${import.meta.env.VITE_SERVER_ADDRESS}/address`);
       //console.log(res.data);
       return res.data;
     } catch (error) {
@@ -39,7 +39,7 @@ const DeliveryCharge = () => {
     console.log(newDeliveryCharge);
 
     axios
-      .post("https://e-mart-server-one.vercel.app/delivery-charge", newDeliveryCharge, {
+      .post(`${import.meta.env.VITE_SERVER_ADDRESS}/delivery-charge`, newDeliveryCharge, {
         withCredentials: true,
       })
       .then((data) => {

@@ -13,7 +13,7 @@ const ShowCategories = () => {
     const [category, setCategory] = useState([]);
 
     useEffect(() => {
-        fetch('https://e-mart-server-one.vercel.app/categories')
+        fetch(`${import.meta.env.VITE_SERVER_ADDRESS}/categories`)
         .then(res => res.json())
         .then(data => setCategory(data))
     }, [])

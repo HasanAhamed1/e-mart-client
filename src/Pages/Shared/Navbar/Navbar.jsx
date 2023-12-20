@@ -167,7 +167,7 @@ const Navbar = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "https://e-mart-server-one.vercel.app/search",
+        `${import.meta.env.VITE_SERVER_ADDRESS}/search`,
         {
           query: searchQuery,
         }

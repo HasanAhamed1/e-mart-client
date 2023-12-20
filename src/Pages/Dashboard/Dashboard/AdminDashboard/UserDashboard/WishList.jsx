@@ -35,7 +35,7 @@ const handleDelete = (wish) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://e-mart-server-one.vercel.app/remove-from-wish-list/${wish.productId}`, {
+        fetch(`${import.meta.env.VITE_SERVER_ADDRESS}/remove-from-wish-list/${wish.productId}`, {
           method: "DELETE", // Use DELETE request
         })
           .then((res) => res.json())

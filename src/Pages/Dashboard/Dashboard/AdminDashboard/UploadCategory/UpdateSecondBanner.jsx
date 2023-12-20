@@ -54,7 +54,7 @@ const UpdateSecondBanner = () => {
           console.log(updatedCategory);
           axios
             .patch(
-              `https://e-mart-server-one.vercel.app/${type}/${slug}`,
+              `${import.meta.env.VITE_SERVER_ADDRESS}/${type}/${slug}`,
               updatedCategory,
               {
                 withCredentials: true,

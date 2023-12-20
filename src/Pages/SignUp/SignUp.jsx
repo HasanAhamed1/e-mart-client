@@ -25,7 +25,7 @@ const SignUp = () => {
     const saveUser = { name: data.name, email: data.email };
     console.log(saveUser);
     axios
-      .post("https://e-mart-server-one.vercel.app/users", saveUser, { withCredentials: true })
+      .post(`${import.meta.env.VITE_SERVER_ADDRESS}/users`, saveUser, { withCredentials: true })
       .then((res) => {
         
         if (res.data.insertedId) {

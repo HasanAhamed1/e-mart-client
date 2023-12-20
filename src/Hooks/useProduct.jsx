@@ -37,7 +37,7 @@ const useProduct = () => {
     try {
       setIsLoading(true);
       const response = await axios.get(
-        `https://e-mart-server-one.vercel.app/api/products?page=${page}`
+        `${import.meta.env.VITE_SERVER_ADDRESS}/api/products?page=${page}`
       );
       setProducts(response.data);
       setIsLoading(false);
@@ -51,7 +51,7 @@ const useProduct = () => {
     try {
       setIsLoading(true);
       const response = await axios.get(
-        `https://e-mart-server-one.vercel.app/api/products?page=${page}`
+        `${import.meta.env.VITE_SERVER_ADDRESS}/api/products?page=${page}`
       );
       const newProducts = response.data;
       setProducts((prevProducts) => [...prevProducts, ...response.data]);

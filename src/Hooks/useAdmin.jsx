@@ -9,7 +9,7 @@ const useAdmin = () => {
         queryKey: ['isAdmin', user?.email],
         enabled: (!loading && !!user),
         queryFn: async () => {
-            const res = await axios.get(`https://e-mart-server-one.vercel.app/users/admin/${user?.email}`, {withCredentials: true})
+            const res = await axios.get(`${import.meta.env.VITE_SERVER_ADDRESS}/users/admin/${user?.email}`, {withCredentials: true})
             return res.data.admin;
         }
     })

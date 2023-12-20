@@ -36,7 +36,7 @@ const AuthProvider = ({children}) => {
     //         setUser(currenUser);
 
     //         if(currenUser){
-    //             axios.post('https://e-mart-server-one.vercel.app/jwt', {email: currenUser.email})
+    //             axios.post('${import.meta.env.VITE_SERVER_ADDRESS}/jwt', {email: currenUser.email})
     //             .then(data => {
     //                 localStorage.setItem('access-token', data.data.token)
     //             })
@@ -56,20 +56,22 @@ const AuthProvider = ({children}) => {
     
           if (currentUser) {
             const email = {email:currentUser.email}
-            axios.post('https://e-mart-server-one.vercel.app/jwt', email , { withCredentials: true } )
+            axios.post(`${import.meta.env.VITE_SERVER_ADDRESS}/jwt`, email , { withCredentials: true } )
               .then((response) => {
                 const token = response.data.token;
+                console.log(token, "token")
                 Cookies.set("_at", token, { secure: true, sameSite: 'none' });
-                setLoading(false);
               })
               .catch((error) => {
                 console.error('Error fetching token:', error);
+              }).finally(()=>{
+                setLoading(false);
               });
               
           } 
           else{
-            // console.log('ewfergetg')
-            axios.delete('https://e-mart-server-one.vercel.app/jwt', { withCredentials: true } )
+            console.log('ewfergetg')
+            axios.delete(`${import.meta.env.VITE_SERVER_ADDRESS}/jwt`, { withCredentials: true } )
               .then((response) => {
                 // console.log('habijabi')
                 Cookies.remove("_at");

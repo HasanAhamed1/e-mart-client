@@ -14,8 +14,10 @@ import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
 import loginImage from "../../assets/login.png";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const Login = () => {
+  const { axiosSecure } = useAxiosSecure();
   const auth = getAuth(app);
   const {
     register,
@@ -81,7 +83,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         const saveUser = { name: user.displayName, email: user.email };
-        fetch("https://e-mart-server-one.vercel.app/users", {
+        fetch(`${import.meta.env.VITE_SERVER_ADDRESS}/users`, {
           method: "POST",
           headers: {
             "content-type": "application/json",

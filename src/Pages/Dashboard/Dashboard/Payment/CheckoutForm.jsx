@@ -62,7 +62,7 @@ const CheckoutForm = ({ price, products }) => {
 
   useEffect(() => {
     axios
-      .post(`https://e-mart-server-one.vercel.app/create-payment-intent`, {
+      .post(`${import.meta.env.VITE_SERVER_ADDRESS}/create-payment-intent`, {
         price,
       })
       .then((res) => {

@@ -68,7 +68,7 @@ const AddCoupon = () => {
     console.log(newCoupon);
 
     axios
-      .post("https://e-mart-server-one.vercel.app/coupon", newCoupon, {
+      .post(`${import.meta.env.VITE_SERVER_ADDRESS}/coupon`, newCoupon, {
         withCredentials: true,
       })
       .then((data) => {

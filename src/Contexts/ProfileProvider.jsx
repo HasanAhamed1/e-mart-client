@@ -13,7 +13,7 @@ const ProfileProvider = ({children}) => {
         queryFn: async () => {
     
             const res = await axios.get(
-                `https://e-mart-server-one.vercel.app/get-profile/${user?.email}`,
+                `${import.meta.env.VITE_SERVER_ADDRESS}/get-profile/${user?.email}`,
                 { withCredentials: true }
               );
           return res?.data;

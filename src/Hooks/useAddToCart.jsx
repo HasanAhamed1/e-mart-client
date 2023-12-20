@@ -24,7 +24,7 @@ const useAddToCart = () => {
         checked: false
       }
       // console.log(cartProduct);
-      axios.post(`https://e-mart-server-one.vercel.app/add-to-cart`, cartProduct, { withCredentials: true } )
+      axios.post(`${import.meta.env.VITE_SERVER_ADDRESS}/add-to-cart`, cartProduct, { withCredentials: true } )
       .then((response) => {
         console.log(response);
         // Check if the response contains the updated cart data

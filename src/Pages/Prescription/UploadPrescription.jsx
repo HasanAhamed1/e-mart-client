@@ -50,7 +50,7 @@ const UploadPrescription = () => {
           const uploadPrescription = { image: imgURL };
           console.log(uploadPrescription);
           axiosSecure
-            .post(`https://e-mart-server-one.vercel.app/upload-prescription`, uploadPrescription, {
+            .post(`${import.meta.env.VITE_SERVER_ADDRESS}/upload-prescription`, uploadPrescription, {
               withCredentials: true,
             })
             .then((data) => {

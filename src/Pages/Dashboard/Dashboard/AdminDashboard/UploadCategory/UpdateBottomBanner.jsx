@@ -52,7 +52,7 @@ const UpdateBottomBanner = () => {
           const updatedCategory = { bottomBannerImage: imgURL };
           console.log(updatedCategory);
           axios
-          .patch(`https://e-mart-server-one.vercel.app/${type}/${slug}`, updatedCategory, {
+          .patch(`${import.meta.env.VITE_SERVER_ADDRESS}/${type}/${slug}`, updatedCategory, {
             withCredentials: true,
           })
           .then((data) => {

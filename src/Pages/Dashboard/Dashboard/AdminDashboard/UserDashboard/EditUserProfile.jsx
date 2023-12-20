@@ -34,7 +34,7 @@ const EditUserProfile = () => {
     data: places = []
   } = useQuery(["places"], async () => {
     try {
-      const res = await axios.get(`https://e-mart-server-one.vercel.app/address`);
+      const res = await axios.get(`${import.meta.env.VITE_SERVER_ADDRESS}/address`);
       //console.log(res.data);
       return res?.data;
     } catch (error) {
@@ -96,7 +96,7 @@ const EditUserProfile = () => {
         console.log(newProfile);
 
         axiosSecure
-          .post("https://e-mart-server-one.vercel.app/upload-profile", newProfile, {
+          .post(`${import.meta.env.VITE_SERVER_ADDRESS}/upload-profile`, newProfile, {
             withCredentials: true,
           })
           .then((data) => {
@@ -138,7 +138,7 @@ const EditUserProfile = () => {
         console.log(newProfile);
 
         axiosSecure
-          .post("https://e-mart-server-one.vercel.app/upload-profile", newProfile, {
+          .post(`${import.meta.env.VITE_SERVER_ADDRESS}/upload-profile`, newProfile, {
             withCredentials: true,
           })
           .then((data) => {

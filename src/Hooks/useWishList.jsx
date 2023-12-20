@@ -11,7 +11,7 @@ const useWishList = () => {
         enabled: !loading,
         queryFn: async () => {
           
-            const res = await axios.get(`https://e-mart-server-one.vercel.app/get-wish-list?email=${user?.email}`, { withCredentials: true })
+            const res = await axios.get(`${import.meta.env.VITE_SERVER_ADDRESS}/get-wish-list?email=${user?.email}`, { withCredentials: true })
             // console.log(res.data?.cart);
             return res?.data?.wishList;
         },

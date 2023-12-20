@@ -41,7 +41,7 @@ const UploadCategory = () => {
         console.log(newCategory);
 
         axios
-          .post("https://e-mart-server-one.vercel.app/categories", newCategory, {
+          .post(`${import.meta.env.VITE_SERVER_ADDRESS}/categories`, newCategory, {
             withCredentials: true,
           })
           .then((data) => {

@@ -175,7 +175,7 @@ const ProductCard = ({ showProduct }) => {
                   isHalf={true}
                   halfIcon={<i className="fa fa-star-half-alt"></i>}
                   fullIcon={<i className="fa fa-star"></i>}
-                  size="20"
+                  size={20}
                   activeColor="#FB8C00"
                 />
               ) : (
