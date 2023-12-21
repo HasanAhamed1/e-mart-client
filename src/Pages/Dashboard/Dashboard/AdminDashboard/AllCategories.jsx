@@ -37,8 +37,8 @@ const AllCategories = () => {
 
   return (
     <>
-      
-        <AdminTitle heading={`Manage Categories (${category.length})`} />
+      <div className="h-full">
+      <AdminTitle heading={`Manage Categories (${category.length})`} />
         <section className="px-4 bg-white max-w-5xl mx-auto">
         {/* table  */}
 
@@ -83,8 +83,7 @@ const AllCategories = () => {
           </table>
         </div>
         </section>
-      
-      
+      </div>
     </>
   );
 };
