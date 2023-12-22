@@ -9,6 +9,8 @@ import ThirdBanner from "../../Component/ThirdBanner";
 import SubCategories from "../../Component/SubCategory/SubCategories";
 import TrendingProducts from "../Shared/TrendingProducts";
 import SubCategoryAllProducts from "../PagesForSubCategory/SubCategoryAllProducts";
+import AutoBackToTop from "../../Component/AutoBackToTop";
+import BackToTopButton from "../../Component/BackToTopButton";
 
 
 
@@ -74,6 +76,8 @@ const PagesForCategory = () => {
       {
         products.length > 0 && (<SubCategoryAllProducts products={products} />)
       }
+    <AutoBackToTop />
+    <BackToTopButton />
     </>
   );
 };

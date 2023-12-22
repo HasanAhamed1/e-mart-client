@@ -7,6 +7,8 @@ import SlimBanner from "../../Component/SlimBanner";
 import ThirdBanner from "../../Component/ThirdBanner";
 import TrendingProducts from "../Shared/TrendingProducts";
 import SubCategoryAllProducts from "./SubCategoryAllProducts";
+import AutoBackToTop from "../../Component/AutoBackToTop";
+import BackToTopButton from "../../Component/BackToTopButton";
 
 
 const PagesForSubCategory = () => {
@@ -57,6 +59,8 @@ const PagesForSubCategory = () => {
       {/* <SubCategories subcategory={subcategory}></SubCategories>
       <SecondBanner img={category.secondBannerImage}></SecondBanner>
       */}
+      <AutoBackToTop />
+      <BackToTopButton />
     </>
   );
 };

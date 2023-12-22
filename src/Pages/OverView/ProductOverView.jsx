@@ -7,6 +7,7 @@ import useCart from "../../Hooks/useCart";
 import ReactStars from "react-rating-stars-component";
 import useRole from "../../Hooks/useRole";
 import AutoBackToTop from "../../Component/AutoBackToTop";
+import BackToTopButton from "../../Component/BackToTopButton";
 
 const ProductOverView = () => {
   const {role} = useRole();
@@ -167,6 +168,7 @@ const ProductOverView = () => {
       </div>)
       }
       <AutoBackToTop />
+      <BackToTopButton />
     </>
   );
 };
